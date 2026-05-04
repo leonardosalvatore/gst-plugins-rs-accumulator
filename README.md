@@ -230,6 +230,7 @@ You will find the following plugins in this repository:
     - `videofx`: Plugin with various video filters.
       - `roundedcorners`: Element to make the corners of a video rounded via the alpha channel.
       - `colordetect`: A pass-through filter able to detect the dominant color(s) on incoming frames, using [color-thief](https://github.com/RazrFalcon/color-thief-rs).
+      - `framestack`: Temporal frame accumulator that combines the last N input frames per pixel (lighten, average or linear-decay modes) for light-trail / long-exposure / "light HDR" effects.
       - `videocompare`: Compare similarity of video frames. The element can use different hashing algorithms like [Blockhash](https://github.com/commonsmachinery/blockhash-rfc), [DSSIM](https://kornel.ski/dssim), and others.
 
     - `viuer`: Terminal-based video sink making use of the [viuer](https://github.com/atanunq/viuer) crate.
