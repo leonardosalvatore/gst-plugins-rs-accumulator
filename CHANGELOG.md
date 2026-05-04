@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html),
 specifically the [variant used by Rust](http://doc.crates.io/manifest.html#the-version-field).
 
+## [Unreleased]
+### Added
+- videofx: New `framestack` element that temporally accumulates the last N
+  input frames per pixel using a configurable mode (lighten, average or
+  linear-decay) for light-trail / long-exposure / "light HDR" effects.
+
 ## [0.15.1] - 2026-02-28
 ### Fixed
 - Don't convert push_event() false returns into flow errors.

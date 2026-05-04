@@ -18,16 +18,22 @@ use gst::prelude::*;
 
 mod border;
 mod colordetect;
+mod framestack;
 mod videocompare;
 
+pub use framestack::FrameStackMode;
 pub use videocompare::{HashAlgorithm, PadDistance, VideoCompareMessage};
 
 fn plugin_init(plugin: &gst::Plugin) -> Result<(), gst::glib::BoolError> {
     #[cfg(feature = "doc")]
-    HashAlgorithm::static_type().mark_as_plugin_api(gst::PluginAPIFlags::empty());
+    {
+        HashAlgorithm::static_type().mark_as_plugin_api(gst::PluginAPIFlags::empty());
+        FrameStackMode::static_type().mark_as_plugin_api(gst::PluginAPIFlags::empty());
+    }
 
     border::register(plugin)?;
     colordetect::register(plugin)?;
+    framestack::register(plugin)?;
     videocompare::register(plugin)
 }
 
